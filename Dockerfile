@@ -10,8 +10,8 @@ RUN curl https://releases.hashicorp.com/consul-replicate/0.3.1/consul-replicate_
 RUN tar xvf consul_replicate.tgz
 RUN chmod u+x consul-replicate
 RUN mkdir -p /usr/local/sbin
+RUN mkdir -p /config
 RUN mv consul-replicate /usr/local/sbin/consul-replicate
-ADD ./config/ /config/
 ADD bootstrap.sh .
 ENTRYPOINT ["sh","/bootstrap.sh"]
 CMD [""]
